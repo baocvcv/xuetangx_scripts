@@ -93,6 +93,7 @@ for unit in range(config.chapter_start,len(keys)):
             problems = driver.find_elements_by_class_name("choicegroup")
             print(len(problems), ' ', len(keys[unit][section]))
         
+        time.sleep(0.5)
         for q in range(len(problems)):
             choices = problems[q].find_elements_by_css_selector("input[type='radio']")
             ans = ord(keys[unit][section][q])-ord('A')
