@@ -1,3 +1,3 @@
-username = "baocvcv@hotmail.com"
-password = "BHbaohan828"
+username = ""
+password = ""
 chapter_start = 0
