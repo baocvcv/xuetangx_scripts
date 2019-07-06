@@ -85,9 +85,13 @@ for unit in range(config.chapter_start,len(keys)):
         # WebDriverWait(driver, 10).until(
         #     EC.element_to_be_clickable((By.XPATH, "//div[@class='chapter']/h3/a"))
         # )
-        time.sleep(3)
+        time.sleep(1)
         problems = driver.find_elements_by_class_name("choicegroup")
         print(len(problems), ' ', len(keys[unit][section]))
+        while len(problems) != len(keys[unit][section]):
+            time.sleep(0.5)
+            problems = driver.find_elements_by_class_name("choicegroup")
+            print(len(problems), ' ', len(keys[unit][section]))
         
         for q in range(len(problems)):
             choices = problems[q].find_elements_by_css_selector("input[type='radio']")
